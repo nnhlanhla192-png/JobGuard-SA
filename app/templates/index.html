@@ -1,160 +1,369 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-    <title>JobGuard SA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JobGuard SA | Verify Before You Apply</title>
+
     <link rel="stylesheet" href="../static/style.css">
 </head>
 
 <body>
 
-    <header>
-        
-<header class="site-header">
+    <!-- NAVIGATION BAR -->
+    <header class="navbar">
+        <a href="#home" class="brand">
+            <img
+                src="../static/images/jobguard-ninja.png"
+                alt="JobGuard SA ninja logo"
+                class="logo"
+            >
 
-    <div class="navbar">
+            <span class="brand-text">
+                <span class="brand-name">JOBGUARD <span>SA</span></span>
+                <small>VERIFY BEFORE YOU APPLY</small>
+            </span>
+        </a>
 
-        <div class="logo">
-            <h1>🛡️ JOBGUARD <span>SA</span></h1>
-            <p>VERIFY BEFORE YOU APPLY</p>
-        </div>
-
-        <nav>
-            <a href="#home">Home</a>
+        <nav class="nav-links">
+            <a href="#home" class="active">Home</a>
             <a href="#check">Check Job</a>
             <a href="#reports">Scam Reports</a>
             <a href="#report-scam">Report a Scam</a>
             <a href="#about">About</a>
         </nav>
 
-        <button type="button" id="theme-toggle">
-            ☀️ Light Mode
+        <button id="theme-toggle" class="theme-toggle" type="button">
+            ☾ Dark Mode
         </button>
-
-    </div>
-
-</header>
-
     </header>
 
-    <main id="home">
 
-        <h2>Is Your Job Offer Safe?</h2>
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
 
-        <p>
-            Check suspicious job advertisements,
-            phone numbers and interview locations
-            before you apply or travel.
-        </p>
+        <div class="hero-content">
+            <p class="eyebrow">SOUTH AFRICAN JOB SEEKER SAFETY</p>
 
-        <section id="check">
+            <h1>
+                VERIFY BEFORE
+                <span>YOU APPLY.</span>
+            </h1>
 
-            <h2>Check a Job Opportunity</h2>
+            <p class="hero-description">
+                Protect yourself from fake recruiters, suspicious job
+                advertisements and unsafe interview locations.
+            </p>
 
-            <form>
+            <div class="hero-buttons">
+                <a href="#check" class="button button-primary">
+                    ⌕ Check a Job Offer <span>→</span>
+                </a>
 
-                <label for="message">
-                    Job Advertisement or Message:
-                </label>
+                <a href="#reports" class="button button-secondary">
+                    ▤ View Scam Reports <span>→</span>
+                </a>
+            </div>
 
-                <br>
+            <p class="trust-note">
+                🛡️ Think before you click. Verify before you trust.
+            </p>
+        </div>
+
+        <div class="hero-image">
+            <img
+                src="../static/images/jobguard-ninja.png"
+                alt="JobGuard SA ninja protecting job seekers from scammers"
+            >
+        </div>
+
+    </section>
+
+
+    <!-- FEATURE STRIP -->
+    <section class="features">
+
+        <article class="feature">
+            <div class="feature-icon">🛡️</div>
+            <div>
+                <h3>Check Job Offers</h3>
+                <p>Check whether a job offer looks suspicious.</p>
+            </div>
+        </article>
+
+        <article class="feature">
+            <div class="feature-icon">⚠️</div>
+            <div>
+                <h3>Report Scams</h3>
+                <p>Help others avoid fake recruiters.</p>
+            </div>
+        </article>
+
+        <article class="feature">
+            <div class="feature-icon">👥</div>
+            <div>
+                <h3>Community Reports</h3>
+                <p>Learn from other job seekers.</p>
+            </div>
+        </article>
+
+        <article class="feature">
+            <div class="feature-icon">🔒</div>
+            <div>
+                <h3>Stay Safe</h3>
+                <p>Protect your money and personal information.</p>
+            </div>
+        </article>
+
+    </section>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- JOB CHECKER -->
+        <section class="checker-section" id="check">
+
+            <div class="section-heading">
+                <div class="heading-icon">⌕</div>
+                <div>
+                    <p class="eyebrow">YOUR FIRST LINE OF DEFENCE</p>
+                    <h2>Job Safety Checker</h2>
+                </div>
+            </div>
+
+            <p class="section-description">
+                Paste a job advertisement, link or recruiter message
+                to check for common warning signs.
+            </p>
+
+            <form id="job-check-form">
+
+                <label for="job-text">Job advertisement or message</label>
 
                 <textarea
-                    id="message"
-                    name="message"
-                    rows="6"
-                    cols="50"
-                    placeholder="Paste a WhatsApp message or job advertisement..."
+                    id="job-text"
+                    name="job_text"
+                    rows="4"
+                    placeholder="Paste the job advert, message or job link here..."
+                    required
                 ></textarea>
 
-                <br><br>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="company-name">Company name (optional)</label>
+                        <input
+                            id="company-name"
+                            name="company_name"
+                            type="text"
+                            placeholder="e.g. Example Company"
+                        >
+                    </div>
 
-                <label for="phone">
-                    Recruiter's Phone Number:
-                </label>
+                    <div class="form-group">
+                        <label for="recruiter-contact">Recruiter contact (optional)</label>
+                        <input
+                            id="recruiter-contact"
+                            name="recruiter_contact"
+                            type="text"
+                            placeholder="Email or phone number"
+                        >
+                    </div>
+                </div>
 
-                <br>
-
-                <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    placeholder="e.g. 0712345678"
-                >
-
-                <br><br>
-
-                <label for="location">
-                    Interview Location:
-                </label>
-
-                <br>
-
-                <input
-                    type="text"
-                    id="location"
-                    name="location"
-                    placeholder="Enter building name or address"
-                >
-
-                <br><br>
-
-                <button type="button">
-                    Check Job Safety
+                <button class="button button-primary check-button" type="submit">
+                    Check Job Safety <span>→</span>
                 </button>
+
+                <p id="checker-message" class="checker-message" role="status">
+                    Your check will look for common scam warning signs.
+                </p>
 
             </form>
 
-        </section>
-
-        <section id="about">
-
-            <h2>About JobGuard SA</h2>
-
-            <p>
-                JobGuard SA helps South African
-                job seekers identify potential
-                recruitment scams, suspicious
-                recruiters and unsafe interview
-                arrangements.
+            <p class="disclaimer">
+                Important: A warning does not prove a job is a scam,
+                and no warning does not guarantee that a job is legitimate.
             </p>
 
         </section>
 
+
+        <!-- RECENT SCAM REPORTS -->
+        <section class="reports-section" id="reports">
+
+            <div class="section-heading reports-heading">
+                <div>
+                    <p class="eyebrow">STAY INFORMED</p>
+                    <h2>Recent Scam Reports</h2>
+                    <p class="section-description">
+                        Examples of warning signs job seekers should look out for.
+                    </p>
+                </div>
+
+                <a href="#report-scam" class="text-link">
+                    Report a Scam →
+                </a>
+            </div>
+
+            <div class="report-list">
+
+                <article class="report-card">
+                    <div class="report-icon">⚠</div>
+                    <div class="report-details">
+                        <h3>Fake Data Capturer Job</h3>
+                        <p>Requests payment before employment.</p>
+                        <small>Warning sign: upfront fee</small>
+                    </div>
+                    <span class="status status-scam">SCAM EXAMPLE</span>
+                </article>
+
+                <article class="report-card">
+                    <div class="report-icon">🔗</div>
+                    <div class="report-details">
+                        <h3>Suspicious Recruitment Link</h3>
+                        <p>Unexpected link asking for personal details.</p>
+                        <small>Warning sign: unverified website</small>
+                    </div>
+                    <span class="status status-warning">SUSPICIOUS</span>
+                </article>
+
+                <article class="report-card">
+                    <div class="report-icon">💳</div>
+                    <div class="report-details">
+                        <h3>Interview Payment Request</h3>
+                        <p>Applicant is asked to pay an interview fee.</p>
+                        <small>Warning sign: payment demand</small>
+                    </div>
+                    <span class="status status-scam">SCAM EXAMPLE</span>
+                </article>
+
+            </div>
+
+            <p class="demo-note">
+                These are demonstration examples, not verified reports about real companies.
+            </p>
+
+        </section>
+
+
+        <!-- REPORT A SCAM -->
+        <section class="report-form-section" id="report-scam">
+
+            <p class="eyebrow">HELP PROTECT OTHER JOB SEEKERS</p>
+            <h2>Report a Suspicious Job</h2>
+
+            <p class="section-description">
+                Share the warning signs you noticed. Do not include passwords,
+                identity numbers, bank details or other sensitive information.
+            </p>
+
+            <form id="scam-report-form">
+
+                <label for="report-title">Job advert or company name</label>
+                <input
+                    id="report-title"
+                    name="report_title"
+                    type="text"
+                    placeholder="Enter the advert or company name"
+                    required
+                >
+
+                <label for="report-reason">What seemed suspicious?</label>
+                <textarea
+                    id="report-reason"
+                    name="report_reason"
+                    rows="4"
+                    placeholder="Describe what happened..."
+                    required
+                ></textarea>
+
+                <button type="submit" class="button button-primary">
+                    Submit Report →
+                </button>
+
+                <p id="report-message" class="checker-message" role="status"></p>
+
+            </form>
+
+            <p class="disclaimer">
+                Demo only: reports are not saved or shared yet.
+            </p>
+
+        </section>
+
+
+        <!-- ABOUT -->
+        <section class="about-section" id="about">
+            <p class="eyebrow">ABOUT JOBGUARD SA</p>
+            <h2>Safer Job Hunting Starts Here.</h2>
+
+            <p>
+                JobGuard SA aims to help South African job seekers recognise
+                suspicious job offers, understand common recruitment scams
+                and share safety information with their community.
+            </p>
+
+            <p>
+                Our goal is to help people make informed decisions before
+                they share personal information or pay money.
+            </p>
+        </section>
+
     </main>
 
-    <footer>
-        <p>
-            © 2026 JobGuard SA |
-            Protecting Job Seekers
-        </p>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <a href="#home" class="footer-brand">JOBGUARD <span>SA</span></a>
+
+        <p>Verify before you apply. Stay alert. Stay safe.</p>
+
+        <small>JobGuard SA · A job-seeker safety project</small>
     </footer>
-    
-<script>
-    const themeButton =
-        document.getElementById("theme-toggle");
 
-    // Start in light mode
-    document.body.classList.remove("light-mode");
 
-    themeButton.addEventListener("click", function() {
+    <!-- BASIC PAGE INTERACTIONS -->
+    <script>
+        // Switch between light and dark themes.
+        const themeButton = document.getElementById("theme-toggle");
 
-        document.body.classList.toggle("dark-mode");
+        themeButton.addEventListener("click", function () {
+            document.body.classList.toggle("dark-mode");
 
-        if (document.body.classList.contains("dark-mode")) {
-            themeButton.textContent = "☀️ Light Mode";
-        } else {
-            themeButton.textContent = "🌙 Dark Mode";
-        }
+            if (document.body.classList.contains("dark-mode")) {
+                themeButton.textContent = "☀ Light Mode";
+            } else {
+                themeButton.textContent = "☾ Dark Mode";
+            }
+        });
 
-    });
+        // Demo only: this does not analyse a job yet.
+        const jobForm = document.getElementById("job-check-form");
+        const checkerMessage = document.getElementById("checker-message");
 
-    themeButton.textContent = "🌙 Dark Mode";
-</script>
+        jobForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            checkerMessage.textContent =
+                "The form works, but scam detection still needs to be connected to the Python backend.";
+        });
+
+        // Demo only: reports are not stored yet.
+        const reportForm = document.getElementById("scam-report-form");
+        const reportMessage = document.getElementById("report-message");
+
+        reportForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            reportMessage.textContent =
+                "Demo complete. Report storage still needs to be connected to the backend.";
+
+            reportForm.reset();
+        });
+    </script>
 
 </body>
 </html>
