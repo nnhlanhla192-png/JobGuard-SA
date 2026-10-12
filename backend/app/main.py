@@ -39,3 +39,70 @@ def health_check():
         "status": "healthy",
         "service": "JobGuard SA Backend"
     }
+
+from pydantic import BaseModel
+
+
+# Information sent by the website
+class JobRequest(BaseModel):
+    job_text: str
+
+
+# Analyse the job advert for common warning signs
+def analyse_job(job_text: str):
+    text = job_text.lower()
+    warning_signs = []
+
+    payment_phrases = [
+        "registration fee",
+        "application fee",
+        "processing fee",
+        "pay upfront",
+        "pay before you start",
+        "pay a fee",
+    ]
+
+    suspicious_phrases = [
+        "guaranteed job",
+        "no interview required",
+        "send your password",
+        "send your id number",
+        "urgent hiring",
+    ]
+
+    for phrase in payment_phrases:
+        if phrase in text:
+            warning_signs.append(
+                f"Possible upfront payment request: '{phrase}'"
+            )
+
+    for phrase in suspicious_phrases:
+        if phrase in text:
+            warning_signs.append(
+                f"Suspicious wording found: '{phrase}'"
+            )
+
+    if warning_signs:
+        risk_level = "High"
+        advice = (
+            "This advert contains warning signs. Verify the employer "
+            "independently before paying money or sharing personal details."
+        )
+    else:
+        risk_level = "Uncertain"
+        advice = (
+            "No warning phrases from our checklist were found. "
+            "This does not prove the job is legitimate."
+        )
+
+    return {
+        "risk_level": risk_level,
+        "warning_signs": warning_signs,
+        "advice": advice,
+    }
+
+
+# API endpoint for checking a job advert
+@app.post("/check-job")
+def check_job(request: JobRequest):
+    return analyse_job(request.job_text)
