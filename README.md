@@ -52,3 +52,5 @@ To protect South African job seekers from recruitment fraud, phishing attacks, f
 ---
 
 **JobGuard SA — Protecting Job Seekers, One Application at a Time.**
+## verification code 
+WTC-8WWF6YTX
