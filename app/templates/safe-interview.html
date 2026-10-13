@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe Interview | JobGuard SA</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html">JobGuard SA</a>
+
+            <div>
+                <a href="index.html">Home</a>
+                <a href="check-job.html">Check Job</a>
+                <a href="scam-reports.html">Scam Reports</a>
+                <a href="report-scam.html">Report a Scam</a>
+                <a href="safe-interview.html">Safe Interview</a>
+                <a href="about.html">About</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h1>Safe Interview Tracking</h1>
+            <p>
+                Your safety matters. Plan your interview journey
+                and arrange check-ins with someone you trust.
+            </p>
+        </section>
+
+        <section>
+            <h2>Interview Details</h2>
+
+            <form id="interview-form">
+                <label for="company">Company Name</label>
+                <input id="company" name="company" required>
+
+                <label for="address">Interview Address</label>
+                <input id="address" name="address" required>
+
+                <label for="interview-time">Interview Date and Time</label>
+                <input
+                    id="interview-time"
+                    name="interview_time"
+                    type="datetime-local"
+                    required
+                >
+
+                <label for="contact-name">Trusted Contact Name</label>
+                <input id="contact-name" name="contact_name" required>
+
+                <label for="contact-email">Trusted Contact Email</label>
+                <input
+                    id="contact-email"
+                    name="contact_email"
+                    type="email"
+                    required
+                >
+
+                <label>
+                    <input type="checkbox" id="location-consent" required>
+                    I agree to share my location with my trusted contact
+                    during this safety session.
+                </label>
+
+                <button type="submit">Create Safety Session</button>
+            </form>
+        </section>
+
+        <section id="tracking-panel" hidden>
+            <h2>Your Safety Session</h2>
+
+            <p id="session-status">No session started yet.</p>
+
+            <button type="button" id="start-sharing">
+                Start Live Location Sharing
+            </button>
+
+            <button type="button" id="stop-sharing" disabled>
+                Stop Location Sharing
+            </button>
+
+            <button type="button" id="check-in">
+                I'm Safe — Check In
+            </button>
+
+            <button type="button" id="arrived">
+                I've Arrived
+            </button>
+
+            <button type="button" id="left">
+                I've Left the Interview
+            </button>
+
+            <p id="tracking-message" role="status" aria-live="polite"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 JobGuard SA. Stay alert. Stay safe.</p>
+    </footer>
+
+    <script src="../static/safe-interview.js"></script>
+</body>
+</html>
