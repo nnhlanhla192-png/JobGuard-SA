@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Check a Job | JobGuard SA</title>
+  <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+<header class="navbar">
+  <a href="index.html" class="brand">
+    <img src="../static/images/jobguard-ninja.png" alt="JobGuard SA logo" class="logo">
+    <span class="brand-text"><span class="brand-name">JOBGUARD <span>SA</span></span><small>VERIFY BEFORE YOU APPLY</small></span>
+  </a>
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="check-job.html" class="active">Check Job</a>
+    <a href="scam-reports.html">Scam Reports</a>
+    <a href="report-scam.html">Report a Scam</a>
+    <a href="safe-interview.html">Safe Interview</a>
+    <a href="about.html">About</a>
+  </nav>
+  <button id="theme-toggle" class="theme-toggle" type="button">☾ Dark Mode</button>
+</header>
+
+<main class="main-content">
+  <section class="checker-section">
+    <p class="eyebrow">YOUR FIRST LINE OF DEFENCE</p>
+    <h1>Job Safety Checker</h1>
+    <p class="section-description">Paste a job advert or recruiter message to check for common warning signs.</p>
+
+    <form id="job-check-form">
+      <label for="job-text">Job advertisement or message</label>
+      <textarea id="job-text" rows="6" placeholder="Paste the job advert or message here..." required></textarea>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="company-name">Company name (optional)</label>
+          <input id="company-name" type="text" placeholder="Company name">
+        </div>
+        <div class="form-group">
+          <label for="recruiter-contact">Recruiter contact (optional)</label>
+          <input id="recruiter-contact" type="text" placeholder="Email or phone number">
+        </div>
+      </div>
+
+      <button class="button button-primary check-button" type="submit">Check Job Safety →</button>
+      <div id="checker-message" class="checker-message" role="status"></div>
+    </form>
+
+    <p class="disclaimer">
+      This tool identifies warning signs; it cannot prove that a job is legitimate or fraudulent.
+    </p>
+  </section>
+</main>
+
+<footer class="footer">
+  <a href="index.html" class="footer-brand">JOBGUARD <span>SA</span></a>
+  <p>Verify before you apply. Stay alert. Stay safe.</p>
+  <small>JobGuard SA · A job-seeker safety project</small>
+</footer>
+<script src="../static/site.js"></script>
+</body>
+</html>

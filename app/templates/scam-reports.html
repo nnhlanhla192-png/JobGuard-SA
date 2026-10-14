@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report a Scam | JobGuard SA</title>
+  <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+<header class="navbar">
+  <a href="index.html" class="brand">
+    <img src="../static/images/jobguard-ninja.png" alt="JobGuard SA logo" class="logo">
+    <span class="brand-text"><span class="brand-name">JOBGUARD <span>SA</span></span><small>VERIFY BEFORE YOU APPLY</small></span>
+  </a>
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="check-job.html">Check Job</a>
+    <a href="scam-reports.html">Scam Reports</a>
+    <a href="report-scam.html" class="active">Report a Scam</a>
+    <a href="safe-interview.html">Safe Interview</a>
+    <a href="about.html">About</a>
+  </nav>
+  <button id="theme-toggle" class="theme-toggle" type="button">☾ Dark Mode</button>
+</header>
+
+<main class="main-content">
+  <section class="report-form-section">
+    <p class="eyebrow">HELP PROTECT OTHER JOB SEEKERS</p>
+    <h1>Report a Suspicious Job</h1>
+    <p class="section-description">Tell us what happened. Do not include passwords, identity numbers or bank details.</p>
+
+    <form id="scam-report-form">
+      <label for="report-title">Company or job advert name</label>
+      <input id="report-title" type="text" placeholder="Enter the company or job title" required>
+
+      <label for="report-contact">Recruiter contact or website (optional)</label>
+      <input id="report-contact" type="text" placeholder="Website, email or phone number">
+
+      <label for="report-reason">What seemed suspicious?</label>
+      <textarea id="report-reason" rows="6" placeholder="Describe what happened..." required></textarea>
+
+      <button type="submit" class="button button-primary">Submit Report →</button>
+      <p id="report-message" class="checker-message" role="status"></p>
+    </form>
+
+    <p class="disclaimer">Your report will not be publicly displayed until a secure reporting and review process is implemented.</p>
+  </section>
+</main>
+
+<footer class="footer">
+  <a href="index.html" class="footer-brand">JOBGUARD <span>SA</span></a>
+  <p>Verify before you apply. Stay alert. Stay safe.</p>
+  <small>JobGuard SA · A job-seeker safety project</small>
+</footer>
+<script src="../static/site.js"></script>
+</body>
+</html>
