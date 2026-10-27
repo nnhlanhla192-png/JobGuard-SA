@@ -1,4 +1,5 @@
-
+from pydantic import BaseModel, Field
+from typing import Optional
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -45,7 +46,14 @@ from pydantic import BaseModel
 
 # Information sent by the website
 class JobRequest(BaseModel):
-    job_text: str
+    job_text: str = Field(
+        ...,
+        min_length=10,
+        max_length=10000
+    )
+
+    job_url: Optional[str] = None
+    company_name: Optional[str] = None
 
 
 # Analyse the job advert for common warning signs
